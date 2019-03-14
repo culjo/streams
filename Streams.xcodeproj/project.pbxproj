@@ -40,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		CE60D5612239D318004389B3 /* MovieInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfo.swift; sourceTree = "<group>"; };
+		CE60D563223A1B8F004389B3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CE9F5CE4223895BA0068186C /* Streams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Streams.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE9F5CE7223895BA0068186C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE9F5CE9223895BA0068186C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +88,7 @@
 		CE9F5CDB223895B90068186C = {
 			isa = PBXGroup;
 			children = (
+				CE60D563223A1B8F004389B3 /* README.md */,
 				CE9F5CE6223895BA0068186C /* Streams */,
 				CE9F5CFB223895BD0068186C /* StreamsTests */,
 				CE9F5CE5223895BA0068186C /* Products */,

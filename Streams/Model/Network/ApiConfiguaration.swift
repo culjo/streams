@@ -9,6 +9,9 @@
 import Foundation
 import Alamofire
 
+/**
+ Used for implementing the basic method needed by alamofire UrlRequestConvertible
+ */
 protocol ApiConfiguration: URLRequestConvertible {
     var method: HTTPMethod { get }
     var path: String { get }

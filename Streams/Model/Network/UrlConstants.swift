@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// App central resource for storing the api url and string constants
 struct UrlConstants {
     // API's base URL
     static let baseUrl = "http://www.omdbapi.com/"

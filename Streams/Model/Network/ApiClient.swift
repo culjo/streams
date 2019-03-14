@@ -24,6 +24,15 @@ class ApiClient {
     }
     
     // MARK: - RxRequest
+    
+    /**
+     Using RxSwift to reactivey make our api reqest and to send reaponse feedback.
+     This wraps the Alamofire Request and waits for the callback response.
+     regardless of the request rxswift is responsible fot communication the changes across the  app.
+     - Parameters:
+     - urlConvertiable: Build from the Endpoint configuration class.
+     - Returns: Observable
+     */
     private static func performRxRequest<T: Codable> (_ urlConvertible: URLRequestConvertible) -> Observable<T> {
         
         // Create an Rxswift observable, which will be the one to call the request when subscribed to

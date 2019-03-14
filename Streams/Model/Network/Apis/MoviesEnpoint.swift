@@ -9,12 +9,19 @@
 import Foundation
 import Alamofire
 
+/**
+ Api Enpoint builder, this class is responsible for defining most associated
+ api endpoints for category ot subcategory of app functionality
+ It is high configurable cos of the URLRequestConvertible
+ It's responsible for building the HTTPMethos, Url Path
+ */
 enum MoviesEndpoint: ApiConfiguration {
     
     case fetchMovie(title: String, year: String)
     case fetchMovieById(omdbId: String)
     case searchMovies(searchString: String)
     
+    // set the request method base on the api fucntionality and definition
     var method: HTTPMethod {
         switch self {
         case .fetchMovie, .fetchMovieById, .searchMovies:
@@ -22,6 +29,7 @@ enum MoviesEndpoint: ApiConfiguration {
         }
     }
     
+    // Majorly this path is need for those api with apth params, but we are not using path params for now
     var path: String {
         switch self {
         case .fetchMovie:
@@ -34,6 +42,8 @@ enum MoviesEndpoint: ApiConfiguration {
         }
     }
     
+    /// Note we are infising the api key here. becos its needed with every api call
+    /// not we are to build the parameter map/dictionary that will be sent with request
     var parameters: Parameters? {
         switch self {
         case .fetchMovie(let title, let year):

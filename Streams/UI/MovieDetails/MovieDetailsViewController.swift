@@ -8,9 +8,17 @@
 
 import UIKit
 
+/**
+ This ViewController is reposible for displaying the details of the movie selected
+ from the **MoviesTableViewController**
+ This Screen features a collapsing header and a tableview for display list of information
+ about a movie
+ **TODO: This class should be migrated into an MVVM arch for better and cleaner code**
+ */
 class MovieDetailsViewController: UIViewController {
     
-    
+    /// An outlet for the top tile and header ui views
+    /// These constraints help in animating the collapsible toolbar
     @IBOutlet weak var headerConstraint: NSLayoutConstraint! // headerHeightConstraint
     @IBOutlet weak var titleTopConstaint: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
@@ -26,15 +34,16 @@ class MovieDetailsViewController: UIViewController {
     @IBOutlet weak var topTitleLabel: UILabel!
     
     
-    let maxHeaderHeight: CGFloat = 320;
-    let minHeaderHeight: CGFloat = 64;
+    let maxHeaderHeight: CGFloat = 330; // Max height the page header in its expanded state
+    let minHeaderHeight: CGFloat = 64; // The min height in it collapsed state
     
     var previousScrollOffset: CGFloat = 0;
     
     var movieDetail: Movie?
     var movieInfo: [MovieInfo] = []
-//    var movieInfoArray = Array<Any>()
     
+    /// Create and instance of the **MovieDetailsViewController**
+    /// - Returns: MovieDetailsViewController
     class func instance() -> MovieDetailsViewController {
         return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: String(describing: MovieDetailsViewController.self)) as! MovieDetailsViewController;
     }
@@ -43,13 +52,14 @@ class MovieDetailsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 600
         
-        // Adding a semi opacity scrim on the image for text visibility
+        // Adding a dark semi opacity scrim on the posterBackDropImage for text visibility & readablilty
         let overlay: UIView = UIView(frame: CGRect(x: 0, y: 0, width: posterBackdropImage.frame.size.width, height: posterBackdropImage.frame.size.height))
         overlay.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.4)
         posterBackdropImage.addSubview(overlay)
@@ -73,20 +83,29 @@ class MovieDetailsViewController: UIViewController {
         
     }
     
+    // overriding the color on the status bar. Setting it to a lighter color (White)
     override var preferredStatusBarStyle : UIStatusBarStyle {
         return .lightContent
     }
     
+    /// Use this method to update the movie details/info screen for information about a selected movie
+    /// **Note: this actualy does not update the UIViews on MovieDetails Screen, this should be called before pushing or presenting a the MovieDetailsViewController**
+    /// - parameter movie: The selcted movie to display & show information about
     func updateMovie(movie: Movie) {
         
         self.movieDetail = movie
         
     }
     
+    /**
+     This method is called at the end of ViewDidLoad so as to update the UIViews
+     accrodingly and display the proper moview information.
+     This method will perform no action if movie has not set before hand.
+     */
     func displayMovieDetails() {
         
         guard let movie = movieDetail else {
-            print("Movie Not Yet Availabe for Display")
+            print("Movie Not Yet Availabe For Display")
             return
         }
         
@@ -103,6 +122,7 @@ class MovieDetailsViewController: UIViewController {
         buildMovieInfo()
     }
     
+
     func buildMovieInfo() {
         
         guard let movie = movieDetail else {
@@ -135,10 +155,6 @@ class MovieDetailsViewController: UIViewController {
         movieInfo.append(MovieInfo("Production", movie.production))
         movieInfo.append(MovieInfo("Website", movie.website))
         
-        
-        
-//        movieInfoArray = Array(movieInfo);
-        
         self.tableView.reloadData()
     }
     
@@ -150,6 +166,7 @@ class MovieDetailsViewController: UIViewController {
 
 }
 
+// MARK: Table DataSource
 extension MovieDetailsViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -177,6 +194,7 @@ extension MovieDetailsViewController: UITableViewDataSource {
     
 }
 
+// MARK: Table Delegates
 extension MovieDetailsViewController: UITableViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -262,6 +280,8 @@ extension MovieDetailsViewController: UITableViewDelegate {
     func setScrollPosition(_ position: CGFloat) {
         self.tableView.contentOffset = CGPoint(x: self.tableView.contentOffset.x, y: position)
     }
+    
+    /// Controls the behaviour of inner contents int the colapsing header view.
     
     func updateHeader() {
         let range = self.maxHeaderHeight - self.minHeaderHeight

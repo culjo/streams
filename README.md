@@ -2,11 +2,12 @@
 
 Streams is an ios app that allow you to see the list of all the movies ever created about Batman, the Marvel superhero over the years.
 
-<img align="left" src="https://github.com/culjo/streams/blob/master/Assets/screen1.png" width="300">
-<img align="left" src="https://github.com/culjo/streams/blob/master/Assets/screen2.png" width="300">
-<img align="left" src="https://github.com/culjo/streams/blob/master/Assets/screen3.png" width="300">
-<img align="left" src="https://github.com/culjo/streams/blob/master/Assets/screen4.png" width="300">
+<img align="left" src="https://github.com/culjo/streams/blob/master/Screens/screen1.png" width="300">
+<img align="left" src="https://github.com/culjo/streams/blob/master/Screens/screen2.png" width="300">
+<img align="left" src="https://github.com/culjo/streams/blob/master/Screens/screen3.png" width="300">
+<img align="left" src="https://github.com/culjo/streams/blob/master/Screens/screen4.png" width="300">
 
+<p>&nbsp;</p>
 
 ## Getting Started
 

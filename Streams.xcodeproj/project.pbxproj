@@ -93,7 +93,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CE60D564223A3415004389B3 /* Assets */ = {
+		CE60D564223A3415004389B3 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
 				CE60D568223A3678004389B3 /* screen1.png */,
@@ -101,13 +101,13 @@
 				CE60D566223A3676004389B3 /* screen3.png */,
 				CE60D565223A3675004389B3 /* screen4.png */,
 			);
-			path = Assets;
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		CE9F5CDB223895B90068186C = {
 			isa = PBXGroup;
 			children = (
-				CE60D564223A3415004389B3 /* Assets */,
+				CE60D564223A3415004389B3 /* Screens */,
 				CE60D563223A1B8F004389B3 /* README.md */,
 				CE9F5CE6223895BA0068186C /* Streams */,
 				CE9F5CFB223895BD0068186C /* StreamsTests */,

@@ -316,13 +316,50 @@
             </objects>
             <point key="canvasLocation" x="2704.8000000000002" y="127.28635682158921"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="LpR-6p-HHm">
+            <objects>
+                <viewController id="awc-gj-Eok" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="A6g-Fn-6cm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nDw-ea-dRL">
+                                <rect key="frame" x="16" y="20" width="343" height="313"/>
+                                <color key="backgroundColor" name="Color-Toolbar"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="313" id="rfu-cp-byU"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OPg-xB-UA1">
+                                <rect key="frame" x="16" y="341" width="343" height="306"/>
+                                <color key="backgroundColor" red="0.3544846418" green="0.58082298200000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nDw-ea-dRL" firstAttribute="leading" secondItem="Dma-AW-tFY" secondAttribute="leading" constant="16" id="CLp-Xb-xuu"/>
+                            <constraint firstItem="Dma-AW-tFY" firstAttribute="bottom" secondItem="OPg-xB-UA1" secondAttribute="bottom" constant="20" id="GpD-oT-SXr"/>
+                            <constraint firstItem="nDw-ea-dRL" firstAttribute="top" secondItem="Dma-AW-tFY" secondAttribute="top" id="VT7-oO-WQ0"/>
+                            <constraint firstItem="OPg-xB-UA1" firstAttribute="top" secondItem="nDw-ea-dRL" secondAttribute="bottom" constant="8" id="e27-Ph-zhH"/>
+                            <constraint firstItem="Dma-AW-tFY" firstAttribute="trailing" secondItem="OPg-xB-UA1" secondAttribute="trailing" constant="16" id="goH-Ii-nFc"/>
+                            <constraint firstItem="OPg-xB-UA1" firstAttribute="leading" secondItem="Dma-AW-tFY" secondAttribute="leading" constant="16" id="osP-tY-QzI"/>
+                            <constraint firstItem="Dma-AW-tFY" firstAttribute="trailing" secondItem="nDw-ea-dRL" secondAttribute="trailing" constant="16" id="vu7-jL-KXX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Dma-AW-tFY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="87Q-5p-Guk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3658" y="126"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ozu-Ra-MIn">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="K50-Tt-e46" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Gzs-re-xzq">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="32"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.3544846418" green="0.58082298200000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -336,7 +373,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kak-6k-W2m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="935.20000000000005" y="127.28635682158921"/>
+            <point key="canvasLocation" x="850" y="127"/>
         </scene>
     </scenes>
     <resources>
@@ -349,6 +386,9 @@
         </namedColor>
         <namedColor name="Color-Magnet">
             <color red="0.20784313725490197" green="0.23137254901960785" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Color-Toolbar">
+            <color red="0.93725490196078431" green="0.23921568627450981" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
